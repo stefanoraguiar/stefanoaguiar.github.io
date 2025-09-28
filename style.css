@@ -1,29 +1,71 @@
+/* --- Basic Reset and Body Setup --- */
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow-x: hidden; /* Prevents horizontal scrollbar if content overflows */
+    font-family: sans-serif; /* A fallback font for the whole page */
 }
 
+/* --- The Main Hero Container --- */
 .hero-section {
-    /* Set the background image */
-    background-image: url('https://stefanoraguiar.github.io/photos/41703764151_b3e5cf0d6f_b.jpg');
-    
-    /* Center the background image */
-    background-position: center center;
-    
-    /* Do not repeat the image */
-    background-repeat: no-repeat;
-    
-    /* This is the key: scale the image to cover the entire container */
-    background-size: cover;
-    
-    /* Make the section take up 100% of the viewport height and width */
+    /* 1. Sizing and Positioning */
     width: 100vw;   /* 100% of the viewport width */
     height: 100vh;  /* 100% of the viewport height */
+    position: relative; /* This is crucial for the overlay to work */
+    overflow: hidden; /* Ensures nothing spills out of the hero section */
+
+    /* 2. The Background Image */
+    background-image: url('photos/41703764151_b3e5cf0d6f_b.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* 3. Centering the content (the text-box) inside */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- The Gradient Overlay --- */
+.hero-section::before {
+    content: ''; /* Pseudo-elements require a content property */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* 4. The Diagonal Teal Gradient */
+    background: linear-gradient(45deg, #007F80, #005F60);
     
-    /* Optional: If you want content to scroll over the image */
-    /* If you want it to be fixed in the background while content scrolls over it */
-    /* background-attachment: fixed; */ 
+    /* 5. The Multiply Blending Mode */
+    mix-blend-mode: multiply;
+}
+
+/* --- The Semi-Transparent Text Box --- */
+.text-box {
+    /* Adding some space between the text and the border */
+    padding: 2rem 4rem; 
+
+    /* 6. The Semi-Transparent Background */
+    background-color: rgba(0, 0, 0, 0.15); /* A very subtle dark transparency */
+
+    /* 7. The 4px White Border */
+    border: 4px solid white;
+
+    /* This ensures the box sits on top of the gradient overlay */
+    z-index: 1;
+}
+
+/* --- The Text Styling --- */
+.text-box h1 {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase; /* Makes the text all caps for style */
+
+    /* 8. Font Size and Letter Spacing (Your Refinements) */
+    font-size: 2.2rem; /* Lowered the font size */
+    letter-spacing: 0.75em; /* Significantly increased letter spacing */
 }
