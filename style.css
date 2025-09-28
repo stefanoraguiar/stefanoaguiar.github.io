@@ -40,7 +40,7 @@ body, html {
     background: linear-gradient(45deg, #007F80, #005F60);
     
     /* 5. The Multiply Blending Mode */
-    mix-blend-mode: multiply;
+    mix-blend-mode: screen;
 }
 
 /* --- The Semi-Transparent Text Box --- */
