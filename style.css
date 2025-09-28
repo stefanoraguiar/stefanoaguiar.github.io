@@ -1,8 +1,29 @@
-body {
-    font-family: sans-serif;
-    display: grid;
-    place-content: center;
-    height: 100vh;
-    text-align: center;
-    background-color: #f0f2f5;
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrollbar if content overflows */
+}
+
+.hero-section {
+    /* Set the background image */
+    background-image: url('photos/41703764151_b3e5cf0d6f_b.jpg');
+    
+    /* Center the background image */
+    background-position: center center;
+    
+    /* Do not repeat the image */
+    background-repeat: no-repeat;
+    
+    /* This is the key: scale the image to cover the entire container */
+    background-size: cover;
+    
+    /* Make the section take up 100% of the viewport height and width */
+    width: 100vw;   /* 100% of the viewport width */
+    height: 100vh;  /* 100% of the viewport height */
+    
+    /* Optional: If you want content to scroll over the image */
+    /* If you want it to be fixed in the background while content scrolls over it */
+    /* background-attachment: fixed; */ 
 }
