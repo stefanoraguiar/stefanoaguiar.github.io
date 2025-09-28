@@ -69,3 +69,34 @@ body, html {
     font-size: 2.2rem; /* Lowered the font size */
     letter-spacing: 0.75em; /* Significantly increased letter spacing */
 }
+
+/* --- Scroll Down Arrow Styling & Animation --- */
+
+.scroll-down-arrow {
+    /* 1. Positioning at the bottom center */
+    position: absolute;
+    bottom: 30px; /* 30px from the bottom */
+    left: 50%; /* 50% from the left */
+    transform: translateX(-50%); /* This perfectly centers it */
+    z-index: 1;
+
+    /* 2. Styling the icon itself */
+    font-size: 2rem; /* How big the arrow is */
+    color: white;
+
+    /* 3. Applying the animation we will create below */
+    animation: blinkAnimation 2.5s infinite;
+}
+
+/* 4. Defining the "blink" animation using keyframes */
+@keyframes blinkAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
