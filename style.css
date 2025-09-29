@@ -82,7 +82,7 @@ body, html {
 
     /* 2. Styling the icon itself */
     font-size: 2rem; /* How big the arrow is */
-    color: white;
+    color: teal;
 
     /* 3. Applying the animation we will create below */
     animation: blinkAnimation 2.5s infinite;
