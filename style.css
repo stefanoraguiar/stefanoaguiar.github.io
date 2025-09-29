@@ -23,6 +23,7 @@ body, html {
 
     /* 3. Centering the content (the text-box) inside */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -42,9 +43,13 @@ body, html {
     /* 5. The Multiply Blending Mode */
     mix-blend-mode: screen;
 }
-
 /* --- The Semi-Transparent Text Box --- */
-.text-box {
+.hero-header-container{
+    display:flex column;
+    justify-items: flex-end;
+}
+
+.text-box, .signature-box {
     /* Adding some space between the text and the border */
     padding: 2rem 4rem; 
 
@@ -58,8 +63,16 @@ body, html {
     z-index: 1;
 }
 
+.signature-box{
+    padding: 1rem 2rem;
+    margin-top: 16px;
+    align-self: flex-end;
+    width:fit-content;
+}
+
+
 /* --- The Text Styling --- */
-.text-box h1 {
+.text-box h1, .signature-box h1 {
     margin: 0;
     color: white;
     font-weight: bold;
@@ -68,6 +81,10 @@ body, html {
     /* 8. Font Size and Letter Spacing (Your Refinements) */
     font-size: 2.2rem; /* Lowered the font size */
     letter-spacing: 0.75em; /* Significantly increased letter spacing */
+}
+
+.signature-box h1{
+    font-size: 1.2rem;
 }
 
 /* --- Scroll Down Arrow Styling & Animation --- */
@@ -99,60 +116,4 @@ body, html {
     100% {
         opacity: 1;
     }
-}
-
-/* --- New 'Portraiture' Section Styling --- */
-
-.content-section {
-    /* 1. Sizing and Basic Layout */
-    width: 100vw;
-    height: 100vh;
-    display: flex; /* This is key for the side-by-side layout */
-    align-items: center; /* Vertically centers the content */
-    justify-content: center; /* Horizontally centers the content blocks */
-    gap: 64px; /* Creates some space between the grid and the text */
-    padding: 0 5%; /* Adds some padding on the sides of the screen */
-    box-sizing: border-box; /* Ensures padding doesn't add to the total width */
-    background-color: #f4f4f4; /* A light grey background for contrast */
-}
-
-/* --- The Left Subsection (Image Grid) --- */
-.image-grid-container {
-    /* 1. Use CSS Grid for the 3x3 layout */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
-    grid-template-rows: repeat(3, 1fr);    /* 3 equal-width rows */
-    
-    /* 2. The required 16px fixed spacing between thumbnails */
-    gap: 16px;
-}
-
-.image-grid-container img {
-    /* 3. Make images fill their grid cell and maintain aspect ratio */
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures images cover the square space without distortion */
-    aspect-ratio: 1 / 1; /* Enforces a square shape */
-}
-
-/* --- The Right Subsection (Text) --- */
-.text-content-container {
-    /* 1. Flex property to grow and fill remaining space */
-    flex: 1; 
-
-    /* 2. The required limit of 50% of the parent's width */
-    max-width: 50%;
-}
-
-.text-content-container h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-}
-
-.text-content-container p {
-    font-size: 1.1rem;
-    line-height: 1.6; /* Improves readability */
-    color: #333; /* A dark grey for the text */
 }
